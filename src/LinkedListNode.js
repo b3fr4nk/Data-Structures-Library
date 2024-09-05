@@ -15,6 +15,9 @@ class LinkedListNode {
     setValue(value) {
         this.value = value;
     }
+    getNext() {
+        return this.next;
+    }
     setNext(next) {
         this.next = next;
     }

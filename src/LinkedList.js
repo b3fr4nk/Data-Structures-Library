@@ -55,6 +55,7 @@ class LinkedList {
         return listString;
     }
 }
+// testing remove before production
 const linkedListA = new LinkedList();
 linkedListA.append(10);
 linkedListA.append(15);

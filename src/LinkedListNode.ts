@@ -1,5 +1,5 @@
 class LinkedListNode<T> {
-    value: T
+    private value: T
     next: LinkedListNode<T>|null
     constructor(value:T) {
         this.value = value
@@ -19,6 +19,10 @@ class LinkedListNode<T> {
 
     setValue(value:T){
         this.value = value
+    }
+
+    getNext():LinkedListNode<T>|null {
+        return this.next
     }
 
     setNext(next:LinkedListNode<T>) {

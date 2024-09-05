@@ -1,7 +1,7 @@
 import LinkedListNode from "./LinkedListNode.js"
 
 class LinkedList<T> {
-    head: LinkedListNode<T> | null
+    private head: LinkedListNode<T> | null
     constructor() {
         this.head = null
     }
@@ -71,6 +71,7 @@ class LinkedList<T> {
 
 }
 
+// testing remove before production
 const linkedListA = new LinkedList()
 linkedListA.append(10)
 
