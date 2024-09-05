@@ -13,8 +13,20 @@ class LinkedListNode<T> {
         return true
     }
 
+    getValue():T {
+        return this.value
+    }
+
+    setValue(value:T){
+        this.value = value
+    }
+
+    setNext(next:LinkedListNode<T>) {
+        this.next = next
+    }
+
     stringifyNode():string {
-        return `${this.value}`
+        return `${this.getValue()}`
     }
 }
 // Testing purposes

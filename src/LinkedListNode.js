@@ -9,8 +9,17 @@ class LinkedListNode {
         }
         return true;
     }
+    getValue() {
+        return this.value;
+    }
+    setValue(value) {
+        this.value = value;
+    }
+    setNext(next) {
+        this.next = next;
+    }
     stringifyNode() {
-        return `${this.value}`;
+        return `${this.getValue()}`;
     }
 }
 // Testing purposes

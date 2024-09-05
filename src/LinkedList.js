@@ -13,7 +13,7 @@ class LinkedList {
             while (currentNode.next !== null) {
                 currentNode = currentNode.next;
             }
-            currentNode.next = newNode;
+            currentNode.setNext(newNode);
         }
     }
     insert(value, position) {
@@ -52,13 +52,11 @@ class LinkedList {
             currentNode = currentNode.next;
         }
         listString += `${currentNode.stringifyNode()}`;
-        console.log(listString);
         return listString;
     }
 }
-const nodeA = new LinkedListNode(1);
 const linkedListA = new LinkedList();
-linkedListA.append(nodeA);
-const nodeB = new LinkedListNode(2);
-linkedListA.insert(nodeB, 1);
+linkedListA.append(10);
+linkedListA.append(15);
+linkedListA.insert(12, 1);
 console.log(linkedListA.stringifyList());

@@ -18,7 +18,7 @@ class LinkedList<T> {
                 currentNode = currentNode.next
             }
 
-            currentNode.next = newNode
+            currentNode.setNext(newNode)
         }
 
     }
@@ -59,7 +59,6 @@ class LinkedList<T> {
         if (this.head === null) {
             return ""
         }
-
         let listString = ""
         let currentNode = this.head
         while (currentNode.next !== null) {
@@ -67,19 +66,16 @@ class LinkedList<T> {
             currentNode = currentNode.next
         }
         listString += `${currentNode.stringifyNode()}`
-        console.log(currentNode.stringifyNode());
         return listString
     }
 
 }
 
-const nodeA = new LinkedListNode(1)
-
 const linkedListA = new LinkedList()
-linkedListA.append(nodeA)
+linkedListA.append(10)
 
-const nodeB = new LinkedListNode(2)
+linkedListA.append(15)
 
-linkedListA.insert(nodeB, 1)
+linkedListA.insert(12, 1)
 
 console.log(linkedListA.stringifyList())
