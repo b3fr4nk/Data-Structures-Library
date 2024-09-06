@@ -1,7 +1,7 @@
-import StackNode from "./StackNode"
+import BasicNode from "./Node";
 
 class Stack<T> {
-  private head: StackNode<T> | null;
+  private head: BasicNode<T> | null;
 
   constructor() {
     this.head = null;
@@ -16,11 +16,11 @@ class Stack<T> {
 
   append(value:T) {
     if (this.head === null) {
-        this.head = new StackNode(value)
+        this.head = new BasicNode(value)
     } else {
         let currentNode = this.head
 
-        const newNode = new StackNode(value)
+        const newNode = new BasicNode(value)
 
         newNode.next = currentNode
         this.head = newNode
@@ -44,7 +44,7 @@ class Stack<T> {
       return null;
     }
 
-    let currentNode: StackNode<T> = this.head;
+    let currentNode: BasicNode<T> = this.head;
 
     while (currentNode.getValue() !== value) {
       // check if this is the end of the linked list
@@ -56,6 +56,14 @@ class Stack<T> {
     }
 
     return currentNode.getValue();
+  }
+
+  peek():T|null {
+    if (this.head === null) {
+        return null
+    }
+
+    return this.head.getValue()
   }
   
 }
