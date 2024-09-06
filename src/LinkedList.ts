@@ -72,11 +72,11 @@ class LinkedList<T> {
 }
 
 // testing remove before production
-const linkedListA = new LinkedList()
-linkedListA.append(10)
+// const linkedListA = new LinkedList()
+// linkedListA.append(10)
 
-linkedListA.append(15)
+// linkedListA.append(15)
 
-linkedListA.insert(12, 1)
+// linkedListA.insert(12, 1)
 
 console.log(linkedListA.stringifyList())
