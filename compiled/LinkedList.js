@@ -3,6 +3,9 @@ class LinkedList {
     constructor() {
         this.head = null;
     }
+    getHead() {
+        return this.head;
+    }
     append(value) {
         const newNode = new LinkedListNode(value);
         if (this.head === null) {
@@ -41,6 +44,21 @@ class LinkedList {
         }
         return false;
     }
+    find(value) {
+        if (this.head === null) {
+            return null;
+        }
+        let currentNode = this.head;
+        while (currentNode.getValue() !== value) {
+            // check if this is the end of the linked list
+            if (currentNode === null) {
+                return null;
+            }
+            // continue searching
+            currentNode = currentNode.next;
+        }
+        return currentNode;
+    }
     stringifyList() {
         if (this.head === null) {
             return "";
@@ -56,8 +74,14 @@ class LinkedList {
     }
 }
 // testing remove before production
-const linkedListA = new LinkedList()
-linkedListA.append(10)
-linkedListA.append(15)
-linkedListA.insert(12, 1)
-console.log(linkedListA.stringifyList())
+// const linkedListA = new LinkedList()
+// linkedListA.append(10)
+// linkedListA.append(15)
+// linkedListA.insert(12, 1)
+// console.log(linkedListA.stringifyList())
+// const list = new LinkedList();
+// list.append(10);
+// list.append(15);
+// list.append(35);
+// console.log(list.find(10))
+export default LinkedList;

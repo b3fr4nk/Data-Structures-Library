@@ -6,6 +6,10 @@ class LinkedList<T> {
         this.head = null
     }
 
+    getHead():LinkedListNode<T>|null {
+        return this.head
+    }
+
     append(value:T) {
         const newNode: LinkedListNode<T> = new LinkedListNode(value)
 
@@ -55,6 +59,26 @@ class LinkedList<T> {
         return false
     }
 
+    find(value:T):LinkedListNode<T>|null {
+        if (this.head === null) {
+            return null
+        }
+
+        let currentNode:LinkedListNode<T> = this.head
+
+        while(currentNode.getValue() !== value ) {
+            // check if this is the end of the linked list
+            if (currentNode === null) {
+              return null;
+            }
+            // continue searching
+            currentNode = currentNode.next!
+        }
+
+        return currentNode
+
+    }
+
     stringifyList():string {
         if (this.head === null) {
             return ""
@@ -80,5 +104,12 @@ class LinkedList<T> {
 // linkedListA.insert(12, 1)
 
 // console.log(linkedListA.stringifyList())
+
+// const list = new LinkedList();
+// list.append(10);
+// list.append(15);
+// list.append(35);
+
+// console.log(list.find(10))
 
 export default LinkedList

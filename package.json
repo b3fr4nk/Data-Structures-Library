@@ -5,7 +5,7 @@
   "description": "",
   "main": "./compiled/LinkedList.js",
   "scripts": {
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "ts-node": "^10.9.2"
+  },
+  "jest": {
+    "transform": {}
   }
-
-
 }
