@@ -80,3 +80,5 @@ class LinkedList<T> {
 // linkedListA.insert(12, 1)
 
 // console.log(linkedListA.stringifyList())
+
+export default LinkedList
