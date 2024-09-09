@@ -1,4 +1,4 @@
-import StackNode from "./StackNode";
+import BasicNode from "./Node";
 class Stack {
     constructor() {
         this.head = null;
@@ -11,11 +11,11 @@ class Stack {
     }
     append(value) {
         if (this.head === null) {
-            this.head = new StackNode(value);
+            this.head = new BasicNode(value);
         }
         else {
             let currentNode = this.head;
-            const newNode = new StackNode(value);
+            const newNode = new BasicNode(value);
             newNode.next = currentNode;
             this.head = newNode;
         }
@@ -42,6 +42,12 @@ class Stack {
             currentNode = currentNode.next;
         }
         return currentNode.getValue();
+    }
+    peek() {
+        if (this.head === null) {
+            return null;
+        }
+        return this.head.getValue();
     }
 }
 export default Stack;
