@@ -1,4 +1,4 @@
-import LinkedList from "../compiled/LinkedList.js"
+import LinkedList from "../dist/LinkedList.js"
 
 test("append to linked list", () => {
     const list = new LinkedList()

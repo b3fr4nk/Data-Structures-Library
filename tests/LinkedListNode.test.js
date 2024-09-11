@@ -1,4 +1,4 @@
-import LinkedListNode from "../compiled/LinkedListNode.js";
+import LinkedListNode from "../dist/LinkedListNode.js";
 test("create basic linked list node", () => {
   let node = new LinkedListNode(10);
 

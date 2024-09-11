@@ -1,4 +1,4 @@
-import Queue from "../compiled/Queue.js";
+import Queue from "../dist/Queue.js";
 
 test("create and enqueue one item to queue", () => {
   const queue = new Queue();
