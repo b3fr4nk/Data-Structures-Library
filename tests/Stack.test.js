@@ -1,4 +1,4 @@
-import Stack from "../dist/Stack.js"
+import {Stack} from "../dist/bundle.esm"
 
 test("create and append one item to stack", () => {
     const stack = new Stack()

@@ -2,6 +2,12 @@ import {Queue} from "../dist/bundle.esm.js";
 import * as readline from "node:readline/promises"; // This uses the promise-based APIs
 import { stdin as input, stdout as output } from "node:process";
 
+import { BinarySearchTree } from "../dist/bundle.esm.js";
+
+const bst = new BinarySearchTree(10)
+
+console.log(bst.search(10))
+
 const rl = readline.createInterface({ input, output });
 
 let running = true  
