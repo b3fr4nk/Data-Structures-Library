@@ -1,4 +1,4 @@
-import Queue from "../dist/Queue.js";
+import {Queue} from "../dist/bundle.esm";
 
 test("create and enqueue one item to queue", () => {
   const queue = new Queue();

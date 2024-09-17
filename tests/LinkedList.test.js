@@ -1,4 +1,4 @@
-import LinkedList from "../dist/LinkedList.js"
+import {LinkedList} from "../dist/bundle.esm"
 
 test("append to linked list", () => {
     const list = new LinkedList()
