@@ -319,5 +319,71 @@ var BinarySearchTree = /** @class */ (function () {
     return BinarySearchTree;
 }());
 
-export { BinarySearchTree, LinkedList, Queue, Stack };
+var MaxHeap = /** @class */ (function () {
+    function MaxHeap() {
+        this.arr = [];
+    }
+    MaxHeap.prototype.left = function (i) {
+        return 2 * i + 1;
+    };
+    MaxHeap.prototype.right = function (i) {
+        return 2 * i + 2;
+    };
+    MaxHeap.prototype.parent = function (i) {
+        var p = Math.floor((i - 1) / 2);
+        return p;
+    };
+    MaxHeap.prototype.getMax = function () {
+        return this.arr[0];
+    };
+    MaxHeap.prototype.insert = function (value) {
+        var _a;
+        this.arr.push(value);
+        var i = this.arr.length - 1;
+        while (i > 0 && this.arr[this.parent(i)] < this.arr[i]) {
+            var p = this.parent(i);
+            _a = [this.arr[p], this.arr[i]], this.arr[i] = _a[0], this.arr[p] = _a[1];
+            i = p;
+        }
+    };
+    MaxHeap.prototype.extractMax = function (i) {
+        if (this.arr.length === 0) {
+            return undefined;
+        }
+        if (this.arr.length === 1) {
+            return this.arr.pop(); // Handle single element heap
+        }
+        var res = this.arr[0];
+        this.arr[0] = this.arr[this.arr.length - 1];
+        this.arr.pop();
+        this.maxHeapify(0);
+        return res;
+    };
+    // method assumes all subtrees are already heapified
+    MaxHeap.prototype.maxHeapify = function (i) {
+        var _a;
+        var arr = this.arr;
+        var n = arr.length;
+        if (n === 1) {
+            return;
+        }
+        var left = this.left(i);
+        var right = this.right(i);
+        var largest = i;
+        if (left < n && arr[left] > arr[largest]) {
+            largest = left;
+        }
+        if (right < n && arr[right] > arr[largest]) {
+            largest = right;
+        }
+        if (largest !== i) {
+            _a = [arr[largest], arr[i]], arr[i] = _a[0], arr[largest] = _a[1];
+            this.maxHeapify(largest);
+        }
+        this.arr = arr;
+    };
+    return MaxHeap;
+}());
+
+export { BinarySearchTree, LinkedList, MaxHeap, Queue, Stack };
 //# sourceMappingURL=bundle.esm.js.map
